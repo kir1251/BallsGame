@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+	    GameMode.OnGameCompleted += mode => EndGame();
         GameMode.StartGame();
     }
 
@@ -37,5 +38,10 @@ public class GameController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void EndGame()
+    {
+
     }
 }

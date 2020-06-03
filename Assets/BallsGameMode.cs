@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class BallsGameMode : IGameMode
 {
 
-	public BallGameStats GameConfiguration;
+	public BallGameConfig GameConfiguration;
 
 	public BallController BallPrefab;
 
@@ -29,7 +29,7 @@ public class BallsGameMode : IGameMode
 	    Timer -= Time.deltaTime;
 	    if (Timer < 0)
 	    {
-            OnGameCompleted.Invoke(this);
+            OnGameCompleted?.Invoke(this);
             return;
             IsPlaying = false;
 	    }

@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a36bb8b47d525c409ac289e141512e5, type: 3}
-  m_Name: Game Config
+  m_Name: Game Config Normal
   m_EditorClassIdentifier: 
-  BallSpawnDelay: 2
-  GameTime: 90
+  BallSpawnDelay: 0.7
+  GameTime: 60
   MinBallSize: 0.66
-  MaxBallSize: 2
-  InitBallVelocity: 1
-  TimeSigma: 3
-  SizeSigma: 0.25
+  MaxBallSize: 1.5
+  InitBallVelocity: 3
+  TimeSigma: 5
+  SizeSigma: 0.7
+  SizePhi: 2

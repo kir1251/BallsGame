@@ -20,13 +20,15 @@ public class BallController : MonoBehaviour
     private BallsGameMode _gameMode;
 
     private float _size;
+    private SpriteRenderer _renderer;
 
     public void Init(BallsGameMode gameMode, float x, float size)
     {
 	    _gameMode = gameMode;
-	    transform.position = new Vector3(x * (_gameMode.ScreenSize.x - size) * 2 - (_gameMode.ScreenSize.x - size), -_gameMode.ScreenSize.y);
+	    transform.position = new Vector3(x * (_gameMode.ScreenSize.x - size/2) * 2 - (_gameMode.ScreenSize.x - size/2), -_gameMode.ScreenSize.y);
         transform.localScale = new Vector3(size, size, size);
 	    _size = size;
-
+        _renderer = GetComponent<SpriteRenderer>();
+        _renderer.color = Random.ColorHSV(0, 1, 0.9f, 1);
     }
 }

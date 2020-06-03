@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Game Config", menuName = "BallGameStats", order = 51)]
-public class BallGameStats : ScriptableObject
+public class BallGameConfig : ScriptableObject
 {
 	/// <summary>
 	/// Spawn delay in seconds
@@ -47,14 +47,20 @@ public class BallGameStats : ScriptableObject
 	[SerializeField]
 	float SizeSigma = .5f;
 
+	/// <summary>
+	/// multiplier for size exponent 
+	/// </summary>
+	[SerializeField]
+	float SizePhi = 2.0f;
+
 	public float BallVelocityFormula(float size, float levelProgress)
 	{
-		return InitBallVelocity * Mathf.Pow(SizeSigma, size) * Mathf.Pow(TimeSigma, levelProgress);
+		return InitBallVelocity * Mathf.Pow(SizeSigma, size * SizePhi) * Mathf.Pow(TimeSigma, levelProgress);
 	}
 
 	public float BallScoreFormula(float size, float levelProgress)
 	{
-		return Mathf.Pow(BallVelocityFormula(size, levelProgress), 2);
+		return Mathf.Pow(size, 2);
 	}
 
 
