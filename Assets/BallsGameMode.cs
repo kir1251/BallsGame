@@ -48,9 +48,7 @@ public class BallsGameMode : IGameMode
     void SpawnBall()
     {
 	    var ball = Instantiate(BallPrefab);
-	    ball.Init(this, Random.value,
-		    GameConfiguration.MinBallSize +
-		    Random.value * (GameConfiguration.MaxBallSize - GameConfiguration.MinBallSize));
+	    ball.Init(this, Random.value, Mathf.Lerp(GameConfiguration.MinBallSize, GameConfiguration.MaxBallSize, Random.value));
     }
 
     public float Timer;

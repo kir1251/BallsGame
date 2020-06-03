@@ -58,7 +58,7 @@ public class BallGameConfig : ScriptableObject
 		return InitBallVelocity * Mathf.Pow(SizeSigma, size * SizePhi) * Mathf.Pow(TimeSigma, levelProgress);
 	}
 
-	public float BallScoreFormula(float size, float levelProgress)
+	public float BallScoreFormula(float size)
 	{
 		return Mathf.Pow(size, 2);
 	}

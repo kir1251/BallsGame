@@ -29,6 +29,33 @@ public class BallController : MonoBehaviour
         transform.localScale = new Vector3(size, size, size);
 	    _size = size;
         _renderer = GetComponent<SpriteRenderer>();
-        _renderer.color = Random.ColorHSV(0, 1, 0.9f, 1);
+        _renderer.color = Random.ColorHSV(0, 1, 1, 1, 1, 1);
+    }
+
+    public void OnTapped()
+    {
+	    GetComponent<Collider2D>().enabled = false;
+	    StartCoroutine(Pop());
+        _gameMode.SendMessage("BallPop", _size);
+    }
+
+    private const float INIT_POPTIME = 0.15f;
+
+    IEnumerator Pop()
+    {
+	    float popTime = INIT_POPTIME;
+	    var size = transform.localScale;
+	    while (popTime > 0)
+	    {
+		    popTime -= Time.deltaTime;
+		    transform.localScale = size * Mathf.Lerp(2, 1, popTime / INIT_POPTIME);
+		    var color = _renderer.color;
+		    color.a = Mathf.Lerp(1, 0, popTime / INIT_POPTIME);
+		    _renderer.color = color;
+
+            yield return null;
+	    }
+
+        Destroy(gameObject);
     }
 }
