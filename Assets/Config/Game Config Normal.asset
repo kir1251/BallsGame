@@ -16,7 +16,7 @@ MonoBehaviour:
   GameTime: 60
   MinBallSize: 0.66
   MaxBallSize: 1.5
-  InitBallVelocity: 3
+  InitBallVelocity: 5
   TimeSigma: 5
   SizeSigma: 0.7
-  SizePhi: 2
+  SizePhi: 3

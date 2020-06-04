@@ -60,7 +60,7 @@ public class BallGameConfig : ScriptableObject
 
 	public float BallScoreFormula(float size)
 	{
-		return Mathf.Pow(size, 2);
+		return Mathf.Pow(size, 2) * 100;
 	}
 
 

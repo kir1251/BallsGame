@@ -11,5 +11,12 @@ public abstract class IGameMode : MonoBehaviour
 
 	public Action<IGameMode> OnGameCompleted;
 
-	public bool IsPlaying { get; protected set; }
+	public virtual bool IsPlaying { get; protected set; }
+
+	public abstract float GetScore();
+	public abstract float GetTopScore();
+
+	public abstract float GetTimer();
+
+	public string ModeName;
 }
