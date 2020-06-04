@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour
 	{
 		if (_gameMode)
 		{
-			TimerText.text = $"{_gameMode.GetTimer():0.##}";
+			TimerText.text = $"{_gameMode.GetTimer():0.00}";
 			ScoreText.text = $"{_gameMode.GetScore():0}";
 		}
 	}
