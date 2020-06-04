@@ -23,7 +23,7 @@ public class BallController : MonoBehaviour
 		_gameMode = gameMode;
 		_size = size;
 
-		transform.position = new Vector3(x * (_gameMode.ScreenSize.x - size/2) * 2 - (_gameMode.ScreenSize.x - size/2), -_gameMode.ScreenSize.y);
+		transform.position = new Vector3(x * (_gameMode.ScreenSize.x - size/2) * 2 - (_gameMode.ScreenSize.x - size/2), -_gameMode.ScreenSize.y - size);
 		transform.localScale = new Vector3(size, size, size);
 		
 		_renderer = GetComponent<SpriteRenderer>();
